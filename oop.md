@@ -48,7 +48,7 @@
   $bmw = new Car ();                        // We created the object from a class with the new keyword.
   $mercedes = new Car ();                   // The process of creating an object is also known as instantiation.
   ```
-  ![alt tag](https://github.com/scoalainformala/web/blob/master/PHP/resources/classes_and_objects.jpg)
+  ![alt tag](https://github.com/ancabalc/php/blob/master/classes_and_objects.jpg)
 
 
 ####Get an object's properties
