@@ -319,3 +319,18 @@
   }
   ```
   ####Abstract classes and methods
+  - We use abstract classes and methods when we need to commit the child classes to certain methods that they inherit from the parent class but we cannot commit about the code that should be written inside the methods.
+  - An abstract class is a class that has at least one abstract method. 
+  - Abstract methods can only have names and arguments, and no other code. 
+  
+  ```
+  abstract class Car { }
+  ```
+  
+  ```
+  // Abstract methods inside an abstract class don't have a body, only a name and parameters inside parentheses.
+  abstract class Car {
+    abstract public function calcNumMilesOnFullTank();
+  }
+  ```
+  
