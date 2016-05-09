@@ -199,45 +199,43 @@
   }
   ```
   
-  ###Inheritance in object-oriented PHP
-    - reduce code duplication with inheritance
-    - using inheritance, we can create a reusable piece of code that we write only once in the parent class, and use again as much as we need in the child classes.
-    - inheritance allows us to write the code only once in the parent, and then use the code in both the parent and the child classes.
+###Inheritance in object-oriented PHP
+  - reduce code duplication with inheritance
+  - using inheritance, we can create a reusable piece of code that we write only once in the parent class, and use again as much as we need in the child classes.
+  - inheritance allows us to write the code only once in the parent, and then use the code in both the parent and the child classes.
     
-    ```
-    class Parent {
-      // The parent’s class code
-    }
-     
-    class Child extends Parent {                                // use the extends keyword
-      // The  child can use the parent's class code
-    }
-    ```
-    
-    ```
-    // Parent class
-    class Vehicle {
-      public $model;
-      public $color = "white"; 
-      
-      public function __construct($model, $color = "white") {
-        $this->model = $model;
-        $this->color = $color;
-      }
-    
-      public function printVehicle() {
-        return "My vehicle " . $this -> model ." color is " . $this->color . ".";
-      }
+  ```
+  class Parent {
+    // The parent’s class code
   }
-
-
+   
+  class Child extends Parent {                                // use the extends keyword
+    // The  child can use the parent's class code
+  }
+  ```
+    
+  ```
+  // Parent class
+  class Vehicle {
+    public $model;
+    public $color = "white"; 
+    
+    public function __construct($model, $color = "white") {
+      $this->model = $model;
+      $this->color = $color;
+    }
+  
+    public function printVehicle() {
+      return "My vehicle " . $this -> model ." color is " . $this->color . ".";
+    }
+  }
+  
   class Bike extends Vehicle {
   
   }
   
   class Car extends Vehicle { 
     public $speed;                               //  a child class cn have its own properties and methods
-    
     public drive() {
       $this->speed ++; 
     }
