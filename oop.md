@@ -198,4 +198,126 @@
     }
   }
   ```
+  
+  ###Inheritance in object-oriented PHP
+    - reduce code duplication with inheritance
+    - using inheritance, we can create a reusable piece of code that we write only once in the parent class, and use again as much as we need in the child classes.
+    - inheritance allows us to write the code only once in the parent, and then use the code in both the parent and the child classes.
+    
+    ```
+    class Parent {
+      // The parent’s class code
+    }
+     
+    class Child extends Parent {                                // use the extends keyword
+      // The  child can use the parent's class code
+    }
+    ```
+    
+    ```
+    // Parent class
+    class Vehicle {
+      public $model;
+      public $color = "white"; 
+      
+      public function __construct($model, $color = "white") {
+        $this->model = $model;
+        $this->color = $color;
+      }
+    
+      public function printVehicle() {
+        return "My vehicle " . $this -> model ." color is " . $this->color . ".";
+      }
+  }
 
+
+  class Bike extends Vehicle {
+  
+  }
+  
+  class Car extends Vehicle { 
+    public $speed;                               //  a child class cn have its own properties and methods
+    
+    public drive() {
+      $this->speed ++; 
+    }
+  }
+  ```
+  
+  ####Protected
+  - When we declare a property or a method as protected, we can approach it from both the parent and the child classes.
+  ```
+  // Parent class
+  class Vehicle {
+      protected $model;
+      public $color = "white"; 
+      
+      public function __construct($model, $color = "white") {
+        $this->model = $model;
+        $this->color = $color;
+      }
+    
+      function printVehicle() {
+        return "model = " . $this -> model ." color =  " . $this->color . ".";
+      }
+  }
+
+
+  class Bike extends Vehicle {
+    public function printBike() {
+      return "My bike model = " . $this -> model;              // Access model from child class
+    }
+  }
+  ```
+  
+  ####Override the parent’s properties and methods in the child class
+  - When we override the class’s properties and methods, we rewrite a method or property that exists in the parent again in the child, but assign to it a different value or code.
+  ``` 
+  // Parent class
+  class Vehicle {
+      protected $model;
+      public $color = "white"; 
+      
+      public function __construct($model, $color = "white") {
+        $this->model = $model;
+        $this->color = $color;
+      }
+    
+      function printVehicle() {
+        return "model = " . $this -> model ." color =  " . $this->color . ".";
+      }
+  }
+
+
+  class Bike extends Vehicle {
+    public function printVehicle() {
+      return "model = " . $this -> model;              // Access model from child class
+    }
+  }
+  ```
+  
+  ####Prevent the child class from overriding
+  ``` 
+  // Parent class
+  class Vehicle {
+      protected $model;
+      public $color = "white"; 
+      
+      public function __construct($model, $color = "white") {
+        $this->model = $model;
+        $this->color = $color;
+      }
+    
+      final function printVehicle() {                    // Use ***final*** to prevent overriding
+        return "model = " . $this -> model ." color =  " . $this->color . ".";
+      }
+  }
+
+
+  class Bike extends Vehicle {
+    public function printVehicle() {                    // EORROR - cannot override final methds
+      return "model = " . $this -> model;             
+    }
+  }
+  ```
+  ####Abstract classes and methods
