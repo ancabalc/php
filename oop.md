@@ -362,4 +362,8 @@
   ```
   
   ####What are the differences between abstract classes and interfaces?
+  ![alt tag](https://github.com/ancabalc/php/blob/master/ai.jpg)
+  
+  ####Polymorphism in PHP
+  - According to the Polymorphism principle, methods in different classes that do similar things should have the same name.
   
