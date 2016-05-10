@@ -334,3 +334,32 @@
   }
   ```
   
+  ####Create child from abstract class
+  - The child classes that inherit from abstract classes must add bodies to the abstract methods.
+  ```
+  class Honda extends Car {
+    // Since we inherited abstract method, we need to define it in the child class, 
+    // by adding code to the method's body.
+    public function calcNumMilesOnFullTank()
+    {
+      $miles = $this -> tankVolume*30;
+      return $miles;
+    }
+  }
+  ```
+  
+  ####Interfaces
+  - An interface commits its child classes to abstract methods that they should implement.
+  - We can implement a number of interfaces in the same class.
+  ```
+  interface interfaceName { 
+    // abstract methods
+  }
+   
+  class Child implements interfaceName {
+    // defines the interface methods and may have its own code
+  }
+  ```
+  
+  ####What are the differences between abstract classes and interfaces?
+  
